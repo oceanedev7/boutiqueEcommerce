@@ -42,14 +42,33 @@ class ProductsController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $produits = Produit::all();
+        $edit=Produit::find($id);  
+            return view("edit", compact('produits', 'edit'));;
     }
 
     
     public function update(Request $request, string $id)
     {
-        //
+        $validatedData=$request->validate(
+            [
+                'name' => 'required|string',
+                'description' => 'required|string',
+                'price' => 'required|numeric',
+            ]);
+        
+            $update=Produit::findOrFail($id);           
+            $update->update($validatedData);
+    
+            return redirect("/");
+
     }
+
+    public function destroy($id)
+    {
+        $delete = Produit::findOrFail($id);
+        $delete->delete();
+        return redirect("/");}
 
     
 }

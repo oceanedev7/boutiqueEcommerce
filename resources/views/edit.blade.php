@@ -6,15 +6,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Modifier produit</title>
 </head>
+
 <body>
 @foreach ($produits as $produit)
-<a href="{{ route('afficherDetails', $produit->id) }}"><div> {{ $produit->name }}</div></a>
+<div> {{ $produit->name }}</div>
+<div> {{ $produit->description }}</div>
 <div> {{ $produit->price }} €</div>
+
+<a href="{{ route('editerProduits', $produit->id) }}" ><i class="fa-solid fa-pencil"></i></a>
+<a href="{{ route('supprimerProduits', $produit->id) }}" ><i class="fa-solid fa-trash"></i></a>
+
 @endforeach
 
 
+<form action="{{ route('modifierProduits', $produit->id) }}" method="post">
+@csrf
 
-<a href="{{ route('editerTaches', $task->id) }}" id="modifier"><i class="fa-solid fa-pencil"></i></a>
-<a href="{{ route('supprimerTaches', $task->id) }}" id="supprimer"><i class="fa-regular fa-square-minus"></i></i></a>
+        <input  value ="{{ $produit->name }}" type="text"  name="name" >
+        <textarea value ="{{ $produit->description }}" name="description" ></textarea>
+        <input value ="{{ $produit->price}}" type="text"  name="price" >
+        <button type="submit"> Modifier </button>
+</form>
 </body>
 </html>
