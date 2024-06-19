@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Product;
+use App\Models\Produit;
 use Illuminate\Http\Request;
 
 class ProductsController extends Controller
@@ -11,8 +11,10 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $displayProducts = Produit::all();
+        return view(
+        'produits', ['produits'=>$displayProducts]
+        );}
 
     /**
      * Show the form for creating a new resource.
