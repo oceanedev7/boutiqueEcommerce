@@ -14,7 +14,7 @@
 
 <main>
 @foreach ($produits as $produit)
-<div> {{ $produit->name }}</div>
+<a href="{{ route('afficherDetails', $produit->id) }}"><div> {{ $produit->name }}</div></a>
 <div> {{ $produit->price }}</div>
 @endforeach
 </main>
