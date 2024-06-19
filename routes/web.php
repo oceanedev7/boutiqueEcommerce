@@ -9,3 +9,7 @@ Route::get('/', function () {
 
 Route::get('/', [ProductsController::class, 'index'])->name('afficherProduits');
 Route::get('/details/{id}', [ProductsController::class, 'show'])->name('afficherDetails');
+Route::get('/add', [ProductsController::class, 'NewProduit']);
+Route::post('/add', [ProductsController::class, 'create'])->name('ajouterProduits');
+
+

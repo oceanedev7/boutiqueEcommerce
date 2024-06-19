@@ -15,7 +15,7 @@
 <main>
 
 <div> {{ $details->name }}</div>
-<div> {{ $details->price }}</div>
+<div> {{ $details->price }} €</div>
 <div> {{ $details->description }}</div>
 
 </main>

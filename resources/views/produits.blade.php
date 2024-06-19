@@ -15,7 +15,7 @@
 <main>
 @foreach ($produits as $produit)
 <a href="{{ route('afficherDetails', $produit->id) }}"><div> {{ $produit->name }}</div></a>
-<div> {{ $produit->price }}</div>
+<div> {{ $produit->price }} €</div>
 @endforeach
 </main>
 
