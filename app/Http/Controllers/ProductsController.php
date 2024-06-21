@@ -39,6 +39,7 @@ class ProductsController extends Controller
         return redirect("/");
     }
 
+  
 
     public function edit(string $id)
     {
