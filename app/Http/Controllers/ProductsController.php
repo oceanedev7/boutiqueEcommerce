@@ -43,9 +43,8 @@ class ProductsController extends Controller
 
     public function edit(string $id)
     {
-        $products = Produit::all();
         $product = Produit::findOrFail($id);  
-            return view("edit", compact("products", 'product'));;
+            return view("edit", compact('product'));;
     }
 
     

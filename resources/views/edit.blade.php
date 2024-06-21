@@ -8,15 +8,14 @@
 </head>
 
 <body>
-@foreach ($products as $produit)
+{{-- @foreach ($products as $produit)
 <div> {{ $produit->name }}</div>
 <div> {{ $produit->description }}</div>
 <div> {{ $produit->price }} €</div>
 
 <a href="{{ route('editerProduits', $produit->id) }}" ><i class="fa-solid fa-pencil"></i></a>
-<a href="{{ route('supprimerProduits', $produit->id) }}" ><i class="fa-solid fa-trash"></i></a>
 
-@endforeach
+@endforeach --}}
 
 
 <form action="{{ route('modifierProduits', $product->id) }}" method="post">
@@ -24,7 +23,8 @@
         <input value ="{{ $product->name }}" type="text"  name="name" >
         <textarea name="description"> {{ $product->description }}</textarea>
         <input value ="{{ $product->price}}" type="text"  name="price" >
-        <button type="submit"> Modifier </button>
+        <button type="submit"> Modifier </button><a href="{{ route('supprimerProduits', $product->id) }}" ><i class="fa-solid fa-trash"></i></a>
+
 </form>
 </body>
 </html>
