@@ -8,7 +8,7 @@
 </head>
 
 <body>
-@foreach ($produits as $produit)
+@foreach ($products as $produit)
 <div> {{ $produit->name }}</div>
 <div> {{ $produit->description }}</div>
 <div> {{ $produit->price }} €</div>
@@ -19,12 +19,11 @@
 @endforeach
 
 
-<form action="{{ route('modifierProduits', $produit->id) }}" method="post">
+<form action="{{ route('modifierProduits', $product->id) }}" method="post">
 @csrf
-
-        <input  value ="{{ $produit->name }}" type="text"  name="name" >
-        <textarea value ="{{ $produit->description }}" name="description" ></textarea>
-        <input value ="{{ $produit->price}}" type="text"  name="price" >
+        <input value ="{{ $product->name }}" type="text"  name="name" >
+        <textarea name="description"> {{ $product->description }}</textarea>
+        <input value ="{{ $product->price}}" type="text"  name="price" >
         <button type="submit"> Modifier </button>
 </form>
 </body>

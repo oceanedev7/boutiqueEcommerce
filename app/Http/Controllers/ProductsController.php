@@ -42,13 +42,13 @@ class ProductsController extends Controller
 
     public function edit(string $id)
     {
-        $produits = Produit::all();
-        $edit=Produit::find($id);  
-            return view("edit", compact('produits', 'edit'));;
+        $products = Produit::all();
+        $product = Produit::findOrFail($id);  
+            return view("edit", compact("products", 'product'));;
     }
 
     
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         $validatedData=$request->validate(
             [
