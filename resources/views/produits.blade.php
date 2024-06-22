@@ -13,7 +13,6 @@
     <h1 class="font-bold text-white text-xl">Boutique E-commerce</h1>
     <a href="{{ route('login') }}" class="btn btn-primary text-white">Connexion</a>
     <a href="{{ route('register') }}" class="btn btn-primary text-white">Créer un compte</a>
-
 </nav>
 
 <header>
@@ -60,11 +59,6 @@
   
 </main>
 
-
-
-<footer>
-
-</footer>
 
 </body>
 </html>
