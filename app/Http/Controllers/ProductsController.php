@@ -10,6 +10,7 @@ class ProductsController extends Controller
     public function index()
     {
         $displayProducts = Produit::all();
+        // dd($displayProducts);
         return view(
         'produits', ['produits'=>$displayProducts]
         );}

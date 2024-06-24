@@ -15,6 +15,7 @@ Route::get('/', function () {
 
 Route::get('/', [ProductsController::class, 'index'])->name('afficherProduits');
 
+
 Route::get('/details/{id}', [ProductsController::class, 'show'])->name('afficherDetails');
 
 Route::get('/add', [ProductsController::class, 'NewProduit']);
@@ -26,12 +27,24 @@ Route::get('edit/{id}/delete', [ProductsController::class,'destroy'])->name('sup
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified','product'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+});
+
+Route::middleware('product')->group(function () {
+    Route::get('/', [ProductsController::class, 'index'])->name('afficherProduits');
+    Route::get('/details/{id}', [ProductsController::class, 'show'])->name('afficherDetails');
+
+    Route::get('/add', [ProductsController::class, 'NewProduit']);
+    Route::post('/add', [ProductsController::class, 'create'])->name('ajouterProduits');
+
+    Route::get('/edit/{id}', [ProductsController::class,'edit'])->name('editerProduits');
+    Route::post('/update/{id}', [ProductsController::class,'update'])->name('modifierProduits');
+    Route::get('edit/{id}/delete', [ProductsController::class,'destroy'])->name('supprimerProduits');
 });
 
 require __DIR__.'/auth.php';
