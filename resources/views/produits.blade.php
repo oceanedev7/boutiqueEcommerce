@@ -21,9 +21,9 @@
 
 <main>
 
-  <div class="text-center"> 
+  {{-- <div class="text-center"> 
     <button style="background-color: #26261D" class="mt-16 mr-4 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-2.5">  <a href="{{ route('ajouterProduits') }}">Ajouter un nouveau produit</a> </button>
-  </div>
+  </div> --}}
   
   
   <div class="bg-white">
@@ -44,11 +44,11 @@
                     </div>
                     <p class="text-sm font-medium text-gray-900">{{ $produit->price }} €</p>
                 </div>
-                <div class="mt-4">
+                {{-- <div class="mt-4">
                     <button style="background-color: #26261D" class="focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-2.5">
                         <a href="{{ route('editerProduits', $produit->id) }}">Modifier ce produit</a>
                     </button>
-                </div>
+                </div> --}}
             </div>
             @endforeach
         </div>

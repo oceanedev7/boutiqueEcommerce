@@ -37,6 +37,8 @@
             </x-slot>
         </x-dropdown>
     </div>
+</x-app-layout>
+</nav>
 
     <header>
         <img class="w-full" src="{{ asset('images/header.png') }}" alt="Image">
@@ -52,8 +54,8 @@
           <div class="bg-white">
             <div class="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12 lg:max-w-7xl lg:px-8">
                 <div class="mt-4 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-                                      @dd($produit) 
-@foreach ($produits as $produit)
+                                     
+                @foreach ($produits as $produit)   
                     <div class="group relative">
                         <a href="{{ route('afficherDetails', $produit->id) }}">
                             <div class="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none group-hover:opacity-75 lg:h-80">
@@ -95,8 +97,7 @@
 
 
 
-</x-app-layout>
-</nav>
+
     {{-- <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Dashboard') }}
