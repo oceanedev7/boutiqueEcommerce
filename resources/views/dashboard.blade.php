@@ -21,7 +21,7 @@
 
             <x-slot name="content">
                 <x-dropdown-link :href="route('profile.edit')">
-                    {{ __('Profile') }}
+                    {{ __('Mon Profil') }}
                 </x-dropdown-link>
 
                 <!-- Authentication -->
@@ -31,14 +31,14 @@
                     <x-dropdown-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Log Out') }}
+                        {{ __('Se déconnecter') }}
                     </x-dropdown-link>
                 </form>
             </x-slot>
         </x-dropdown>
     </div>
 </x-app-layout>
-</nav>
+</nav>  
 
     <header>
         <img class="w-full" src="{{ asset('images/header.png') }}" alt="Image">

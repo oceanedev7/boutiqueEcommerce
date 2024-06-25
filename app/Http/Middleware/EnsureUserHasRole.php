@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Middleware;
+use App\Models\Produit;
 
 use Closure;
 use Illuminate\Http\Request;
@@ -15,10 +16,21 @@ class EnsureUserHasRole
      */
     public function handle(Request $request, Closure $next, string $role): Response
     {
-        if ($request->user() && $request->user()->role === $role) {
-            return $next($request);
+        if ($request->user() && $request->user()->role != $role) {
+
+            $displayProducts = Produit::all();
+            return response()->view('user', ['produits' => $displayProducts]);
         }
 
-        return redirect()->route('afficherProduits'); // Redirige vers la vue "produits"
-    }
+        return $next($request);
+
+    
+         
+
+    }  
+
+   
+  
+    
 }
+

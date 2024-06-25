@@ -24,7 +24,11 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $displayProducts = Produit::all();
+        //  dd($displayProducts);
+        return view(
+        'user', ['produits'=>$displayProducts]
+        );
     }
 
     /**
