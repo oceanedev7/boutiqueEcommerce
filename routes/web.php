@@ -35,12 +35,11 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-    // Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
 });
 
 
 Route::middleware([EnsureUserHasRole::class.':admin'])->group(function () {
-    Route::get('/dashboardAdmin', [UserController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [UserController::class, 'index'])->name('dashboard');
     Route::get('/user', [UserController::class, 'create'])->name('user');
     });
 

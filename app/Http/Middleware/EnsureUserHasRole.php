@@ -23,10 +23,7 @@ class EnsureUserHasRole
         }
 
         return $next($request);
-
-    
          
-
     }  
 
    

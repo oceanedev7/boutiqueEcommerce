@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,23 +8,27 @@
     <title>Boutique E-commerce</title>
 </head>
 <body>
+    <nav class="h-20 flex items-center justify-between px-4 relative" style="background-color: #26261D"> 
+        <div class="absolute left-1/2 transform -translate-x-1/2">
+            <h1 class="font-bold text-white text-xl">Boutique E-commerce</h1>
+        </div>
+        <div class="flex items-center ml-auto">
+            <button style="background-color: #FFFFFF; color: #26261D;" class="focus:outline-none font-medium rounded-lg text-sm px-3 py-2 mr-2">
+                <a href="{{ route('login') }}" style="color: #26261D;">Connexion</a>
+            </button>
+            <button style="background-color: #FFFFFF; color: #26261D;" class="focus:outline-none font-medium rounded-lg text-sm px-3 py-2">
+                <a href="{{ route('register') }}" style="color: #26261D;">Créer un compte</a>
+            </button>
+        </div>
+    </nav>
     
-<nav class="h-20 text-center flex items-center justify-center" style="background-color: #26261D"> 
-    <h1 class="font-bold text-white text-xl">Boutique E-commerce</h1>
-    <a href="{{ route('login') }}" class="btn btn-primary text-white">Connexion</a>
-    <a href="{{ route('register') }}" class="btn btn-primary text-white">Créer un compte</a>
-</nav>
+    
 
 <header>
 <img class="w-full" src="{{ asset('images/header.png') }}" alt="Image">
 </header>
 
 <main>
-
-  {{-- <div class="text-center"> 
-    <button style="background-color: #26261D" class="mt-16 mr-4 focus:outline-none text-white font-medium rounded-lg text-sm px-5 py-2.5">  <a href="{{ route('ajouterProduits') }}">Ajouter un nouveau produit</a> </button>
-  </div> --}}
-  
   
   <div class="bg-white">
     <div class="mx-auto max-w-2xl px-4 py-8 sm:px-6 sm:py-12 lg:max-w-7xl lg:px-8">

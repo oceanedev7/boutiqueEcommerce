@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,8 +7,6 @@
     <title>Description des produits</title>
 </head>
 <body>
-
-
 
 <main>
 
@@ -48,7 +46,7 @@
                   <form>
                     <!-- Colors -->
                     <fieldset aria-label="Choose a color">
-                      <legend class="text-sm font-medium text-gray-900">Coleurs</legend>
+                      <legend class="text-sm font-medium text-gray-900">Couleurs</legend>
   
                       <div class="mt-4 flex items-center space-x-3">
                         <!--
